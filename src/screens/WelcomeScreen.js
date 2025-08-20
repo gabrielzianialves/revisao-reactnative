@@ -11,7 +11,7 @@ export default function WelcomeScreen ({ navigation }) {
             <Text style={styles.title}>Ótimo dia!</Text>
             <Text style={styles.subtitle}>Como deseja acessar?</Text>
 
-            <TouchableOpacity style={styles.mainButton} onPress={() => navigation.replace('Register')}> 
+            <TouchableOpacity style={styles.mainButton}> 
                 <Image source={require('../../assets/Google.png')} style={styles.imagemLogo} />
                 <Text style={styles.mainButtonText}>Como deseja acessar?</Text>
             </TouchableOpacity>
@@ -24,15 +24,21 @@ export default function WelcomeScreen ({ navigation }) {
 
 // estilização
 const styles = StyleSheet.create({
+    imagemCachorro:  {
+      width: 370,
+      height: 370,
+      resizeMode: "contain",
+    },
     mainButton: {
       flexDirection: 'row',
       backgroundColor: '#14C871',
-      padding: 10,
+      padding: 18,
       borderRadius: 10,
       marginTop: 20,
-      width: 250,
-      justifyContent: 'center',
+      width: 320,
       alignItems: 'center',
+      justifyContent: 'center',
+      
     },
     button: {
       backgroundColor: 'white',
@@ -40,8 +46,8 @@ const styles = StyleSheet.create({
       padding: 15,
       borderRadius: 10,
       borderWidth: 0.5,
-      marginTop: 20,
-      width: 250,
+      marginTop: 15,
+      width: 320,
     },
     mainButtonText: {
       color: 'white',
@@ -59,8 +65,8 @@ const styles = StyleSheet.create({
       fontFamily: 'Inter',
     },
     title: {
-      fontSize: 50,
-      marginTop: 50,
+      fontSize: 45,
+      marginTop: 20,
       fontWeight: 'bold',
     },
     subtitle: {
@@ -74,6 +80,8 @@ const styles = StyleSheet.create({
       height: 30,
       backgroundColor: 'white',
       borderRadius: 5,
-      padding: 5
+      padding: 5,
+      position: 'absolute',
+      left: 12,
     }
   });

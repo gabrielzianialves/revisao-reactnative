@@ -1,7 +1,6 @@
 import React from 'react';
 import Checkbox from 'expo-checkbox';
 import { View, Text, StyleSheet, Dimensions, TouchableOpacity, Image, TextInput  } from 'react-native';
-import { CheckBox } from 'react-native-web';
 
 const windowWidth = Dimensions.get('window').width;
 
@@ -12,21 +11,21 @@ export default function LoginScreen ({ navigation }) {
             <Text style={styles.title}>Acesse</Text>
             <Text style={styles.subtitle}>com E-mail e senha</Text>
 
-            <View style={styles.inputContainer}>
-              <Text style={styles.label}>E-mail</Text>
-              <TextInput 
-                  style={styles.input}
-                  placeholder='Digite seu E-mail'
-              />
+            <Text style={styles.label}>E-mail</Text>
+            <TextInput 
+                style={styles.input}
+                placeholder='Digite seu E-mail'
+            />
 
-              <Text style={styles.label}>Senha</Text>
-              <TextInput 
-                  style={styles.input}
-                  placeholder='Digite sua Senha'
-              />
-            </View>
+            <Text style={styles.label}>Senha</Text>
+            <TextInput 
+                style={styles.input}
+                placeholder='Digite sua Senha'
+            />
             
             <View style={styles.checkboxArea}>
+                <Checkbox
+                />
                 <Text>Lembrar senha</Text>
                 <Text>Esqueci minha senha</Text>
             </View>
@@ -45,9 +44,6 @@ export default function LoginScreen ({ navigation }) {
 
 // estilização
 const styles = StyleSheet.create({
-    inputContainer: {
-      alignItems: "center"
-    },
     buttonsContainer: {
       alignItems: "center"
     },
@@ -78,18 +74,20 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       justifyContent: 'center',
+      alignItems: 'center',
       padding: 15,
     },
     title: {
       fontSize: 45,
       marginTop: 50,
       fontWeight: 'bold',
+      right: 85,
     },
     subtitle: {
       fontSize: 16,
       marginBottom: 20,
-      marginTop: 10,
-      textAlign: 'center',
+      marginTop: 5,
+      right: 85,
     },
     input: {
       width: 330,
@@ -97,6 +95,8 @@ const styles = StyleSheet.create({
       borderRadius: 5,
       backgroundColor: '#dbdbdb',
       margin: 10,
-
+    },
+    label: {
+      right: 85,
     }
   });
