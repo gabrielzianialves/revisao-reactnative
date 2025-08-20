@@ -7,12 +7,12 @@ export default function WelcomeScreen ({ navigation }) {
 
   return (
     <View style={styles.container}>
-        <Image source={require('./assets/casual_dog.png')} style={styles.imagem} />
+        <Image source={require('../../assets/casual_dog.png')} style={styles.imagemCachorro} />
             <Text style={styles.title}>Ótimo dia!</Text>
             <Text style={styles.subtitle}>Como deseja acessar?</Text>
 
             <TouchableOpacity style={styles.mainButton} onPress={() => navigation.replace('Register')}> 
-                <Image source={require('./assets/Google.png')} style={styles.imagem} />
+                <Image source={require('../../assets/Google.png')} style={styles.imagemLogo} />
                 <Text style={styles.mainButtonText}>Como deseja acessar?</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.button} onPress={() => navigation.replace('Login')}> 
@@ -25,19 +25,23 @@ export default function WelcomeScreen ({ navigation }) {
 // estilização
 const styles = StyleSheet.create({
     mainButton: {
+      flexDirection: 'row',
       backgroundColor: '#14C871',
-      padding: 15,
-      borderRadius: 15,
+      padding: 10,
+      borderRadius: 10,
       marginTop: 20,
-      width: 220
+      width: 250,
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     button: {
       backgroundColor: 'white',
       borderColor: "#14C871",
       padding: 15,
-      borderRadius: 15,
+      borderRadius: 10,
+      borderWidth: 0.5,
       marginTop: 20,
-      width: 220
+      width: 250,
     },
     mainButtonText: {
       color: 'white',
@@ -55,7 +59,7 @@ const styles = StyleSheet.create({
       fontFamily: 'Inter',
     },
     title: {
-      fontSize: 25,
+      fontSize: 50,
       marginTop: 50,
       fontWeight: 'bold',
     },
@@ -64,5 +68,12 @@ const styles = StyleSheet.create({
       marginBottom: 20,
       marginTop: 10,
       textAlign: 'center',
+    },
+    imagemLogo: {
+      width: 30,
+      height: 30,
+      backgroundColor: 'white',
+      borderRadius: 5,
+      padding: 5
     }
   });

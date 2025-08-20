@@ -9,31 +9,29 @@ export default function LoginScreen ({ navigation }) {
 
   return (
     <View style={styles.container}>
-        <Image source={require('./assets/casual_dog.png')} style={styles.imagem} />
             <Text style={styles.title}>Acesse</Text>
             <Text style={styles.subtitle}>com E-mail e senha</Text>
 
-            <Text style={styles.label}>E-mail</Text>
-            <TextInput 
-                style={styles.input}
-                value={email}
-                placeholder='Digite seu E-mail'
-            />
+            <View style={styles.inputContainer}>
+              <Text style={styles.label}>E-mail</Text>
+              <TextInput 
+                  style={styles.input}
+                  placeholder='Digite seu E-mail'
+              />
 
-            <Text style={styles.label}>Senha</Text>
-            <TextInput 
-                style={styles.input}
-                value={senha}
-                placeholder='Digite sua Senha'
-            />
+              <Text style={styles.label}>Senha</Text>
+              <TextInput 
+                  style={styles.input}
+                  placeholder='Digite sua Senha'
+              />
+            </View>
             
             <View style={styles.checkboxArea}>
-                <CheckBox/>
                 <Text>Lembrar senha</Text>
                 <Text>Esqueci minha senha</Text>
             </View>
 
-            <View style={styles.buttonsArea}>
+            <View style={styles.buttonsContainer}>
                 <TouchableOpacity style={styles.mainButton} onPress={() => navigation.replace('Login')}>
                     <Text style={styles.mainButtonText}>Acessar</Text>
                 </TouchableOpacity>
@@ -47,6 +45,12 @@ export default function LoginScreen ({ navigation }) {
 
 // estilização
 const styles = StyleSheet.create({
+    inputContainer: {
+      alignItems: "center"
+    },
+    buttonsContainer: {
+      alignItems: "center"
+    },
     mainButton: {
       backgroundColor: '#14C871',
       padding: 15,
@@ -74,10 +78,10 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       justifyContent: 'center',
-      alignItems: 'center',
+      padding: 15,
     },
     title: {
-      fontSize: 25,
+      fontSize: 45,
       marginTop: 50,
       fontWeight: 'bold',
     },
@@ -86,5 +90,13 @@ const styles = StyleSheet.create({
       marginBottom: 20,
       marginTop: 10,
       textAlign: 'center',
+    },
+    input: {
+      width: 330,
+      height: 60,
+      borderRadius: 5,
+      backgroundColor: '#dbdbdb',
+      margin: 10,
+
     }
   });
