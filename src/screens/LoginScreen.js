@@ -1,10 +1,14 @@
 import React from 'react';
 import Checkbox from 'expo-checkbox';
+import { useState } from 'react';
 import { View, Text, StyleSheet, Dimensions, TouchableOpacity, Image, TextInput  } from 'react-native';
 
 const windowWidth = Dimensions.get('window').width;
 
 export default function LoginScreen ({ navigation }) {
+
+  const [isChecked, setChecked] = useState(false);
+
 
   return (
     <View style={styles.container}>
@@ -24,10 +28,13 @@ export default function LoginScreen ({ navigation }) {
             />
             
             <View style={styles.checkboxArea}>
-                <Checkbox
+                <Checkbox style={styles.checkbox}
+                    value={isChecked}
+                    onValueChange={setChecked}
+                    color={isChecked ? '#14C871' : undefined}
                 />
-                <Text>Lembrar senha</Text>
-                <Text>Esqueci minha senha</Text>
+                <Text style={styles.remindPassword}>Lembrar senha</Text>
+                <Text style={styles.forgotPassword}>Esqueci minha senha</Text>
             </View>
 
             <View style={styles.buttonsContainer}>
@@ -44,33 +51,6 @@ export default function LoginScreen ({ navigation }) {
 
 // estilização
 const styles = StyleSheet.create({
-    buttonsContainer: {
-      alignItems: "center"
-    },
-    mainButton: {
-      backgroundColor: '#14C871',
-      padding: 15,
-      borderRadius: 15,
-      marginTop: 20,
-      width: 220
-    },
-    button: {
-      backgroundColor: 'white',
-      borderColor: "#14C871",
-      padding: 15,
-      borderRadius: 15,
-      marginTop: 20,
-      width: 220
-    },
-    mainButtonText: {
-      color: 'white',
-      fontSize: 12,
-      textAlign: 'center',
-    },
-    buttonText: {
-      fontSize: 12,
-      textAlign: 'center',
-    },
     container: {
       flex: 1,
       justifyContent: 'center',
@@ -81,22 +61,72 @@ const styles = StyleSheet.create({
       fontSize: 45,
       marginTop: 50,
       fontWeight: 'bold',
-      right: 85,
+      right: 90,
     },
     subtitle: {
       fontSize: 16,
       marginBottom: 20,
       marginTop: 5,
-      right: 85,
+      right: 93,
     },
     input: {
       width: 330,
       height: 60,
       borderRadius: 5,
       backgroundColor: '#dbdbdb',
-      margin: 10,
+      marginBottom: 20,
+      padding: 20,
     },
     label: {
-      right: 85,
-    }
+      right: 145,
+    },
+    checkboxArea: {
+      flexDirection: 'row',
+      margin: 10
+    },
+    checkbox: {
+      right: 37
+    },
+    remindPassword: {
+      right: 30
+    },
+    forgotPassword: {
+      left: 37
+    },
+    buttonsContainer: {
+      alignItems: "center",
+      flexDirection: 'row',
+      marginTop: 12
+    },
+    mainButton: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: 155,
+      height: 60,
+      backgroundColor: '#14C871',
+      borderRadius: 8,
+      padding: 15,
+      margin: 10,
+    },
+    button: {
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: 155,
+      height: 60,
+      backgroundColor: 'white',
+      borderColor: "#14C871",
+      borderWidth: 0.5,
+      borderRadius: 8,
+      padding: 15,
+      margin: 10,
+    },
+    mainButtonText: {
+      color: 'white',
+      fontSize: 13,
+      textAlign: 'center',
+    },
+    buttonText: {
+      fontSize: 13,
+      textAlign: 'center',
+    },
   });
