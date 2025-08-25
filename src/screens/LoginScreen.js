@@ -1,4 +1,3 @@
-import React from 'react';
 import Checkbox from 'expo-checkbox';
 import { useState } from 'react';
 import { View, Text, StyleSheet, Dimensions, TouchableOpacity, Image, TextInput  } from 'react-native';
@@ -11,7 +10,7 @@ export default function LoginScreen ({ navigation }) {
 
 
   return (
-    <View style={styles.container}>
+      <View style={styles.container}>
             <Text style={styles.title}>Acesse</Text>
             <Text style={styles.subtitle}>com E-mail e senha</Text>
 
@@ -45,6 +44,17 @@ export default function LoginScreen ({ navigation }) {
                     <Text style={styles.buttonText}>Cadastrar</Text>
                 </TouchableOpacity>
             </View>
+
+            <View style={styles.separator}>
+                <View style={styles.line}></View>
+                <Text>Ou continue com</Text>
+                <View style={styles.line}></View>
+            </View>
+
+            <View style={styles.imageContainer}>
+                <Image source={require('../../assets/Google.png')} style={styles.image}/>
+                <Image source={require('../../assets/Facebook.png')} style={styles.image}/>
+            </View>
       </View>
   );
 }
@@ -61,7 +71,7 @@ const styles = StyleSheet.create({
       fontSize: 45,
       marginTop: 50,
       fontWeight: 'bold',
-      right: 90,
+      right: 90
     },
     subtitle: {
       fontSize: 16,
@@ -129,4 +139,29 @@ const styles = StyleSheet.create({
       fontSize: 13,
       textAlign: 'center',
     },
+    separator: {
+      display: 'flex', 
+      flexDirection: 'row', 
+      justifyContent: 'space-evenly', 
+      alignItems: 'center',
+      marginTop: 40,
+      width: '90%',
+    },
+    line: {
+      height: 1,
+      backgroundColor: '#2A3844',
+      width: "30%"
+    },
+    imageContainer: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: "space-evenly",
+      alignItems: 'center',
+      marginTop: 20,
+      width: '65%',
+    },
+    image: {
+      width: 60,
+      height: 60,
+    }
   });
