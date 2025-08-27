@@ -18,6 +18,10 @@ Se você preferir por **clonar** o projeto, pode inserir esse comando no termina
 git clone https://github.com/gabrielzianialves/revisao-reactnative.git
 ```
 
+Importe:
+```bash
+npm install lucide-react-native
+```
 Agora, se preferir **baixar** o projeto em arquivo ZIP, siga as seguintes instruções:
 
 1. Vá até a página principal do repositório no GitHub;
